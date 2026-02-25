@@ -1046,6 +1046,20 @@ public class SLConnection
         });
     }
 
+    public async Task<T> GetAttachmentsMetadataAsync<T>(int attachmentEntry)
+    {
+        return await ExecuteRequest(async () =>
+        {
+            var stringResult = await Client
+                .Request($"Attachments2({attachmentEntry})")
+                .WithCookies(await GetSessionCookiesAsync())
+                .GetStringAsync();
+            using var jsonDoc = JsonDocument.Parse(stringResult);
+            string jsonToDeserialize = jsonDoc.RootElement.GetRawText();
+            return JsonSerializer.Deserialize<T>(jsonToDeserialize);
+        });
+    }
+
     #endregion
 
     #region Batch Request Methods
