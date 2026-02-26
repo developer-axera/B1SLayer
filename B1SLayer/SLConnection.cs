@@ -1046,6 +1046,12 @@ public class SLConnection
         });
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <param name="attachmentEntry"></param>
+    /// <returns></returns>
     public async Task<T> GetAttachmentsMetadataAsync<T>(int attachmentEntry)
     {
         return await ExecuteRequest(async () =>

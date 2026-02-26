@@ -878,6 +878,14 @@
             The downloaded attachment file as a <see cref="T:System.Byte"/> array.
             </returns>
         </member>
+        <member name="M:B1SLayer.SLConnection.GetAttachmentsMetadataAsync``1(System.Int32)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="attachmentEntry"></param>
+            <returns></returns>
+        </member>
         <member name="M:B1SLayer.SLConnection.PostBatchAsync(B1SLayer.SLBatchRequest[])">
             <summary>
             Sends a batch request (multiple operations sent in a single HTTP request) with the provided <see cref="T:B1SLayer.SLBatchRequest"/> instances.
