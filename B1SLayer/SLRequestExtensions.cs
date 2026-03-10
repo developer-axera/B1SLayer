@@ -139,6 +139,18 @@ public static class SLRequestExtensions
     }
 
     /// <summary>
+    /// Allows a PATCH request to send eTag
+    /// </summary>
+    public static SLRequest WithIfMatch(this SLRequest request, string eTag)
+    {
+        if (string.IsNullOrWhiteSpace(eTag))
+            throw new ArgumentException("ETag value cannot be null or empty.", nameof(eTag));
+
+        request.WithHeader("If-Match", eTag);
+        return request;
+    }
+
+    /// <summary>
     /// Adds a custom request header to be sent.
     /// </summary>
     /// <param name="request">

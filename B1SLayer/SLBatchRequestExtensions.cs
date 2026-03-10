@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using System;
+using System.Net;
 
 namespace B1SLayer;
 
@@ -38,6 +39,18 @@ public static class SLBatchRequestExtensions
     public static SLBatchRequest WithReturnNoContent(this SLBatchRequest batchRequest)
     {
         batchRequest.Headers.Add("Prefer", "return-no-content");
+        return batchRequest;
+    }
+
+    /// <summary>
+    /// Allows a PATCH request to send eTag
+    /// </summary>
+    public static SLBatchRequest WithIfMatch(this SLBatchRequest batchRequest, string eTag)
+    {
+        if (string.IsNullOrWhiteSpace(eTag))
+            throw new ArgumentException("ETag value cannot be null or empty.", nameof(eTag));
+
+        batchRequest.Headers.Add("If-Match", eTag);
         return batchRequest;
     }
 
