@@ -311,6 +311,11 @@
             On success, <see cref="F:System.Net.HttpStatusCode.NoContent"/> is returned, instead of <see cref="F:System.Net.HttpStatusCode.Created"/>.
             </remarks>
         </member>
+        <member name="M:B1SLayer.SLBatchRequestExtensions.WithIfMatch(B1SLayer.SLBatchRequest,System.String)">
+            <summary>
+            Allows a PATCH request to send eTag
+            </summary>
+        </member>
         <member name="M:B1SLayer.SLBatchRequestExtensions.WithHeader(B1SLayer.SLBatchRequest,System.String,System.String)">
             <summary>
             Adds a custom request header to be sent.
@@ -1250,6 +1255,11 @@
             <remarks>
             On success, <see cref="F:System.Net.HttpStatusCode.NoContent"/> is returned, instead of <see cref="F:System.Net.HttpStatusCode.Created"/>.
             </remarks>
+        </member>
+        <member name="M:B1SLayer.SLRequestExtensions.WithIfMatch(B1SLayer.SLRequest,System.String)">
+            <summary>
+            Allows a PATCH request to send eTag
+            </summary>
         </member>
         <member name="M:B1SLayer.SLRequestExtensions.WithHeader(B1SLayer.SLRequest,System.String,System.Object)">
             <summary>
